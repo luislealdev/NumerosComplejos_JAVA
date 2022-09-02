@@ -17,6 +17,7 @@ public class p291 {
         String operador = sc.next();
 
         numeroComplejo result = v_numComplejo1.m_operation(v_numComplejo2, operador);
+        
         System.out.println(result.a_numReal + " +" + result.a_numImaginario);
     }
 }
@@ -42,15 +43,17 @@ class numeroComplejo {
                 v_resultado.a_numImaginario = Double.toString(a_intPart + p_intPart) + "i";
                 break;
             case "-":
-
+                v_resultado.a_numReal = a_numReal - p_numeroComplejo.a_numReal;
+                v_resultado.a_numImaginario = Double.toString(a_intPart - p_intPart) + "i";
                 break;
             case "*":
-
+                v_resultado.a_numReal = a_numReal * p_numeroComplejo.a_numReal;
+                v_resultado.a_numImaginario = Double.toString(a_intPart * p_intPart) + "i";
                 break;
             case "/":
-
+                v_resultado.a_numReal = a_numReal / p_numeroComplejo.a_numReal;
+                v_resultado.a_numImaginario = Double.toString(a_intPart / p_intPart) + "i";
                 break;
-
         }
         return v_resultado;
     }
