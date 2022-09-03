@@ -4,6 +4,8 @@ public class p291 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
+        
+        do{
         Double numReal_1 = sc.nextDouble();
         String numImaginario_1 = sc.next();
 
@@ -18,7 +20,17 @@ public class p291 {
 
         numeroComplejo result = v_numComplejo1.m_operation(v_numComplejo2, operador);
         
-        System.out.println(result.a_numReal + " +" + result.a_numImaginario);
+        String operadorRespuesta;
+
+        if(result.a_numReal%1==0){
+            int v_numReal =  (int) Math.round(result.a_numReal);
+            System.out.print(v_numReal + " +" + result.a_numImaginario);
+        }else{
+            System.out.print(result.a_numReal + " +" + result.a_numImaginario);
+        }
+
+
+        }while(true);
     }
 }
 
