@@ -4,33 +4,37 @@ public class p291 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        
-        do{
-        Double numReal_1 = sc.nextDouble();
-        String numImaginario_1 = sc.next();
+        do {
+            Double numReal_1 = sc.nextDouble();
+            String numImaginario_1 = sc.next();
 
-        numeroComplejo v_numComplejo1 = new numeroComplejo(numReal_1, numImaginario_1);
+            numeroComplejo v_numComplejo1 = new numeroComplejo(numReal_1, numImaginario_1);
 
-        Double numReal_2 = sc.nextDouble();
-        String numImaginario_2 = sc.next();
+            Double numReal_2 = sc.nextDouble();
+            String numImaginario_2 = sc.next();
 
-        numeroComplejo v_numComplejo2 = new numeroComplejo(numReal_2, numImaginario_2);
+            numeroComplejo v_numComplejo2 = new numeroComplejo(numReal_2, numImaginario_2);
 
-        String operador = sc.next();
+            String operador = sc.next();
 
-        numeroComplejo result = v_numComplejo1.m_operation(v_numComplejo2, operador);
-        
-        String operadorRespuesta;
+            numeroComplejo result = v_numComplejo1.m_operation(v_numComplejo2, operador);
 
-        if(result.a_numReal%1==0){
-            int v_numReal =  (int) Math.round(result.a_numReal);
-            System.out.print(v_numReal + " +" + result.a_numImaginario);
-        }else{
-            System.out.print(result.a_numReal + " +" + result.a_numImaginario);
-        }
+            String operadorRespuesta;
 
+            if (result.m_getIntPart() < 0) {
+                operadorRespuesta = "";
+            } else {
+                operadorRespuesta = "+";
+            }
 
-        }while(true);
+            if (result.a_numReal % 1 == 0) {
+                int v_numReal = (int) Math.round(result.a_numReal);
+                System.out.print(v_numReal + " " + operadorRespuesta + result.a_numImaginario);
+            } else {
+                System.out.print(result.a_numReal + " " + operadorRespuesta + result.a_numImaginario);
+            }
+
+        } while (true);
     }
 }
 
